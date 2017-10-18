@@ -6,7 +6,13 @@ output: html_document
 ---
 
 ```{r}
+library(tidyverse)
+library(readr)
+airbnb_data = read_csv("./nyc_airbnb.zip") %>% mutate(rating = review_scores_location / 2 , boro = neighbourhood_group)
 
+View(airbnb_data)
+# look at the structure of the dataset
+str(airbnb_data)
 ```
 
 ```{r}

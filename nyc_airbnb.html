@@ -124,6 +124,61 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr</code></pre>
+<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
+<pre><code>## filter(): dplyr, stats
+## lag():    dplyr, stats</code></pre>
+<pre class="r"><code>library(readr)
+airbnb_data = read_csv(&quot;./nyc_airbnb.zip&quot;) %&gt;% mutate(rating = review_scores_location / 2 , boro = neighbourhood_group)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   id = col_integer(),
+##   review_scores_location = col_integer(),
+##   name = col_character(),
+##   host_id = col_integer(),
+##   host_name = col_character(),
+##   neighbourhood_group = col_character(),
+##   neighbourhood = col_character(),
+##   latitude = col_double(),
+##   longitude = col_double(),
+##   room_type = col_character(),
+##   price = col_integer(),
+##   minimum_nights = col_integer(),
+##   number_of_reviews = col_integer(),
+##   last_review = col_date(format = &quot;&quot;),
+##   reviews_per_month = col_double(),
+##   calculated_host_listings_count = col_integer(),
+##   availability_365 = col_integer()
+## )</code></pre>
+<pre class="r"><code>View(airbnb_data)
+# look at the structure of the dataset
+str(airbnb_data)</code></pre>
+<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    40753 obs. of  19 variables:
+##  $ id                            : int  7949480 16042478 1886820 6627449 5557381 9147025 11675715 715270 17876530 182177 ...
+##  $ review_scores_location        : int  10 NA NA 10 10 10 10 9 10 9 ...
+##  $ name                          : chr  &quot;City Island Sanctuary relaxing BR &amp; Bath w Parking&quot; &quot;WATERFRONT STUDIO APARTMENT&quot; &quot;Quaint City Island Community.&quot; &quot;Large 1 BDRM in Great location&quot; ...
+##  $ host_id                       : int  119445 9117975 9815788 13886510 28811542 403032 56714504 3684360 11305944 873273 ...
+##  $ host_name                     : chr  &quot;Linda &amp; Didier&quot; &quot;Collins&quot; &quot;Steve&quot; &quot;Arlene&quot; ...
+##  $ neighbourhood_group           : chr  &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; ...
+##  $ neighbourhood                 : chr  &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; ...
+##  $ latitude                      : num  40.9 40.9 40.8 40.8 40.9 ...
+##  $ longitude                     : num  -73.8 -73.8 -73.8 -73.8 -73.8 ...
+##  $ room_type                     : chr  &quot;Private room&quot; &quot;Private room&quot; &quot;Entire home/apt&quot; &quot;Entire home/apt&quot; ...
+##  $ price                         : int  99 200 300 125 69 125 85 39 95 125 ...
+##  $ minimum_nights                : int  1 7 7 3 3 2 1 2 3 2 ...
+##  $ number_of_reviews             : int  25 0 0 12 86 41 74 114 5 206 ...
+##  $ last_review                   : Date, format: &quot;2017-04-23&quot; NA ...
+##  $ reviews_per_month             : num  1.59 NA NA 0.54 3.63 2.48 5.43 2.06 5 2.98 ...
+##  $ calculated_host_listings_count: int  1 1 1 1 1 1 1 4 3 4 ...
+##  $ availability_365              : int  170 180 365 335 352 129 306 306 144 106 ...
+##  $ rating                        : num  5 NA NA 5 5 5 5 4.5 5 4.5 ...
+##  $ boro                          : chr  &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; ...</code></pre>
 <ul>
 <li><p>Does rating vary by neighborhood, room type, or both</p></li>
 <li><p>Do host with more listings with higher or lower ratings</p></li>
