@@ -179,6 +179,22 @@ str(airbnb_data)</code></pre>
 ##  $ availability_365              : int  170 180 365 335 352 129 306 306 144 106 ...
 ##  $ rating                        : num  5 NA NA 5 5 5 5 4.5 5 4.5 ...
 ##  $ boro                          : chr  &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; ...</code></pre>
+<pre class="r"><code>airbnb_data %&gt;% count(boro)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##            boro     n
+##           &lt;chr&gt; &lt;int&gt;
+## 1         Bronx   649
+## 2      Brooklyn 16810
+## 3     Manhattan 19212
+## 4        Queens  3821
+## 5 Staten Island   261</code></pre>
+<pre class="r"><code>airbnb_data %&gt;% count(room_type)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##         room_type     n
+##             &lt;chr&gt; &lt;int&gt;
+## 1 Entire home/apt 19937
+## 2    Private room 19626
+## 3     Shared room  1190</code></pre>
 <ul>
 <li><p>Does rating vary by neighborhood, room type, or both</p></li>
 <li><p>Do host with more listings with higher or lower ratings</p></li>

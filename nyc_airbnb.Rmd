@@ -16,11 +16,11 @@ str(airbnb_data)
 ```
 
 ```{r}
-
+airbnb_data %>% count(boro)
 ```
 
 ```{r}
-
+airbnb_data %>% count(room_type)
 ```
 
 ```{r}
