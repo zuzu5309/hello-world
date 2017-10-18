@@ -1,0 +1,68 @@
+---
+title: "LectureNote"
+author: "Zuzu"
+date: "October 15, 2017"
+output: html_document
+---
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+* Does rating vary by neighborhood, room type, or both
+
+```{r}
+
+
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+* Do host with more listings with higher or lower ratings
+
+```{r}
+
+```
+```{r}
+
+```
+
+```{r}
+
+```
+```{r}
+
+```
+
+```{r}
+
+```
+
+* Where are rentals located
+
+```{r}
+
+```
+* Which rentals make the most money?
+* How are descriptions related to number of reviews (cannot address right now)?
+
